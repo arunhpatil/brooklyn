@@ -15,7 +15,7 @@ setup(
         license='MIT',
         package_dir={'brooklyn': 'brooklyn'},
         packages=find_packages(),
-        package_data = {'':['rScripts/*.R']},
+        package_data = {'':['rScripts/*.R', 'libs/*.py']},
         install_requires=['scanpy','pandas','numpy','scipy'],
         entry_points={'console_scripts': ['brooklyn = brooklyn.__main__:main']},
         classifiers=[

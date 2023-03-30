@@ -47,11 +47,13 @@ def chunkifyList(glist, numChunks):
 
 
 
-def brooklyn_arch(h5file, workDir, annotations, geneList, againstList, threads):
+def brooklyn_arch(h5file, workDir, annotations, gl, agl, threads):
     #Start time
     brooklyn_start = time.perf_counter()
     # Set/initialize global input items
     global h5ad_cm, outdir, refseq, geneList, againstList, data
+    geneList = gl
+    againstList = agl
     # refering the output directory - and creating cor_gene sub-directory
     newSubDir = Path(workDir)/"cor_genes"
     Path(newSubDir).mkdir(exist_ok=True, parents=True)

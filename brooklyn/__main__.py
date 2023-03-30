@@ -13,6 +13,7 @@ import os
 import pandas as pd
 
 #Custom brooklyn libraries
+from brooklyn.libs.parse import parseArg
 from brooklyn.libs.coexpression import brooklyn_arch
 from brooklyn.libs.summary import summarize
 
@@ -35,10 +36,11 @@ def main():
         print("The gene annotations file (biomart) provided doesn't exists. Please provide the correct file!")
         exit()
     # Create output directory if it doesn't exist 
-    if args.outDirName:
-        ourDir_n = str(args.outDirName)
-        workDir = Path(args.outDir)/ourDir_n if args.outDir else Path.cwd()/ourDir_n
-    else:
+    try:
+        if args.outDirName:
+            ourDir_n = str(args.outDirName)
+            workDir = Path(args.outDir)/ourDir_n if args.outDir else Path.cwd()/ourDir_n
+    except AttributeError:
         tStamp = time.strftime('%Y-%m-%d_%H-%M-%S',time.localtime(time.time()))
         ourDir = "brooklyn_" + tStamp
         workDir = Path(args.outDir)/ourDir if args.outDir else Path.cwd()/ourDir
@@ -47,7 +49,7 @@ def main():
     gl = pd.read_csv(args.query)
     geneList = gl[gl.columns[0]].values.tolist()
     # Read subject gene list from a CSV file
-    agl = pd.read_csv(subject)
+    agl = pd.read_csv(args.subject)
     againstList = agl[agl.columns[0]].values.tolist()
     # Create output filenames provided by user or use default values
     if args.outFile:
