@@ -41,5 +41,5 @@ html_context = {
                 'display_github': True,
                 'github_user': 'arunhpatil',
                 'github_repo': 'brooklyn',
-                'github_version': 'master/docs/source/',
+                'github_version': 'main/docs/source/',
     }
