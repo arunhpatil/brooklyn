@@ -33,5 +33,13 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+html_show_sourcelink = False
 html_static_path = ['_static']
+html_context = {
+                'display_github': True,
+                'github_user': 'arunhpatil',
+                'github_repo': 'brooklyn',
+                'github_version': 'master/docs/source/',
+    }

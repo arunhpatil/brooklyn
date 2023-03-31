@@ -13,11 +13,3 @@ Welcome to brooklyn's documentation!
    installation.md
    quick_start.md
    license
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
