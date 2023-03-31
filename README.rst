@@ -2,8 +2,7 @@
 Brooklyn
 ========
 
-
-Brooklyn plot for single cell/nuclei RNA sequencing data. This package enables the pair-wise (ie., many to many) gene comparison and reports the co-expressed genes spanning few kilo basepairs and plots a brooklyn plot for visualization. More about this in the documentation below. 
+Brooklyn plot for single cell/nuclei RNA sequencing data. This package enables a Pearson pairwise (ie., many to many) gene comparison and outputs co-expression patterns of genes across the genome. It generates a Brooklyn plot for visualization. More about this in the documentation below.
 
 Links
 -----
