@@ -68,9 +68,9 @@ def main():
     summarize(workDir, fileBase)
     RscriptDirTmp = Path(__file__).resolve().parents[0]
     RscriptDir = Path(RscriptDirTmp)/('rScripts')/('brooklynPlot.R')
-    brooklynSummarySorted = Path(workDir)/str(fileBase) + "_sorted_summary.csv"
-    outbrooklynplot = Path(workDir)/str(fileBase) + "_plot.pdf"
-    os.system('Rscript %s %s %s %s %s %s %s'%(RscriptDir, brooklynSummarySorted, outbrooklynplot))
+    brooklynSummarySorted = Path(workDir)/str(str(fileBase) + "_sorted_summary.csv")
+    outbrooklynplot = Path(workDir)/str(str(fileBase) + "_plot.pdf")
+    os.system('Rscript %s %s %s'%(RscriptDir, brooklynSummarySorted, outbrooklynplot))
     globalend_time = time.perf_counter()
     print(f'\nThe path to ourput directory: {workDir}')
     print(f'\nThe analysis completed in {round(globalend_time-globalstart, 4)} second(s)\n')

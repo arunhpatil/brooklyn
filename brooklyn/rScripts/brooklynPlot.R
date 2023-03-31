@@ -1,7 +1,7 @@
-dir.create(Sys.getenv("R_LIBS_USER"), recursive = TRUE, showWarnings = FALSE)  # create personal library
-.libPaths(Sys.getenv("R_LIBS_USER"))  # add to the path
-packages <- c("ggplot2")
-install.packages(setdiff(packages, rownames(installed.packages())))
+#dir.create(Sys.getenv("R_LIBS_USER"), recursive = TRUE, showWarnings = FALSE)  # create personal library
+#.libPaths(Sys.getenv("R_LIBS_USER"))  # add to the path
+#packages <- c("ggplot2")
+#install.packages(setdiff(packages, rownames(installed.packages())))
 
 library(ggplot2)
 

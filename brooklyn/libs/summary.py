@@ -9,35 +9,39 @@ import os
 import sys
 import pandas as pd
 import time
+from pathlib import Path
 
-def summarize(workdir, fileBase):
+def summarize(workDir, fileBase):
     globalstart = time.perf_counter()
     basepath = Path(workDir)/"cor_genes"
-    brookSum = Path(workDir)/str(fileBase) + "_summary.csv"
-    brookSumSorted = Path(workDir)/str(fileBase) + "_sorted_summary.csv"
+    brookSum = Path(workDir)/str(str(fileBase) + "_summary.csv")
+    brookSumSorted = Path(workDir)/str(str(fileBase) + "_sorted_summary.csv")
     new_emptyList = list()
     for entry in os.listdir(basepath):
         if "csv" in entry:
             df = pd.read_csv(os.path.join(basepath,entry))
             sdf = df.sort_values('r', ascending=False)
             sdfp = sdf[sdf['r'] >= 0]
-            sdfp2 = sdfp.nlargest(51,'r')
-            df_1 = sdfp2.iloc[:1,:]
-            req_chr = df_1.iloc[0]['chromosome_name']
-            df_2 = sdfp2.iloc[1:,:]
-            denominator = int(df_2.shape[0])
             try:
-                occurence = int(df_2['chromosome_name'].value_counts()[req_chr])
-            except KeyError:
-                occurence = 0
-                #denominator = 0
-            if denominator > 0:
-                percent_occurence = str(round((occurence / denominator) * 100,2))
-            else:
-                percent_occurence = "0"
-            base = (df_1.values.tolist())
-            base = base[0] + [str(occurence), str(denominator), percent_occurence]
-            new_emptyList.append(base)
+                sdfp2 = sdfp.nlargest(51,'r')
+                df_1 = sdfp2.iloc[:1,:]
+                req_chr = df_1.iloc[0]['chromosome_name']
+                df_2 = sdfp2.iloc[1:,:]
+                denominator = int(df_2.shape[0])
+                try:
+                    occurence = int(df_2['chromosome_name'].value_counts()[req_chr])
+                except KeyError:
+                    occurence = 0
+                    #denominator = 0
+                if denominator > 0:
+                    percent_occurence = str(round((occurence / denominator) * 100,2))
+                else:
+                    percent_occurence = "0"
+                base = (df_1.values.tolist())
+                base = base[0] + [str(occurence), str(denominator), percent_occurence]
+                new_emptyList.append(base)
+            except TypeError:
+                pass
 
     summarizedDF = pd.DataFrame(new_emptyList, columns = ['gene', 'r', 'p', 'bon', 'neg_log10_p', 'hgnc_symbol','chromosome_name', 'start_position', 'xMean', 'end_position', 'band', 'occurence', 'denominator', 'percent_occurence'])
     summarizedDF = summarizedDF.round(decimals = 2)
