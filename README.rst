@@ -7,7 +7,7 @@ Brooklyn plot for single cell/nuclei RNA sequencing data. This package enables a
 Links
 -----
 
-* `Documentation <https://brooklyn.readthedocs.io/en/master/>`_
+* `Documentation <https://brooklyn-plot.readthedocs.io/en/latest/>`_
 * `Source code <https://github.com/arunhpatil/brooklyn/>`_
 * `Report an issue <https://github.com/arunhpatil/brooklyn/issues>`_
 * `Project page on PyPI <https://pypi.python.org/pypi/brooklyn-plot/>`_
