@@ -5,13 +5,14 @@ import subprocess
 from pkg_resources import get_distribution
 
 def parseArg():
-    version = get_distribution("brooklyn").version
-    parser = argparse.ArgumentParser(description='Brooklyn (Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data)',usage='brooklyn [options]',formatter_class=argparse.RawTextHelpFormatter,)
+    version = get_distribution("brooklyn_plot").version
+    parser = argparse.ArgumentParser(description='Brooklyn (Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data)',usage='brooklyn_plot [options]',formatter_class=argparse.RawTextHelpFormatter,)
     if len(sys.argv)==1:
         parser.print_help(sys.stderr)
         sys.exit(1)
     parser.add_argument('--version', action='version', version='%s'%(version))
-    group = parser.add_argument_group("Options",description='''-h5,    --h5ad            input file in .h5ad format (accepts .h5ad) 
+    group = parser.add_argument_group("Options",description='''
+-h5,   --h5ad               input file in .h5ad format (accepts .h5ad) 
 -ba,   --biomart            the reference gene annotations (in .csv format) 
 -od,   --outDir             the directory of the outputs (Default: brooklyn-date-hh-mm-ss) 
 -of,   --outFile            the name of summarized brooklyn file as CSV file and a brooklyn plot in PDF (Default: brooklyn-date-hh-mm-ss)
