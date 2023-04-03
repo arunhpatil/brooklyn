@@ -13,9 +13,9 @@ import os
 import pandas as pd
 
 #Custom brooklyn libraries
-from brooklyn.libs.parse import parseArg
-from brooklyn.libs.coexpression import brooklyn_arch
-from brooklyn.libs.summary import summarize
+from brooklyn_plot.libs.parse import parseArg
+from brooklyn_plot.libs.coexpression import brooklyn_arch
+from brooklyn_plot.libs.summary import summarize
 
 
 def main():
