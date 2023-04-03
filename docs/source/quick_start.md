@@ -4,23 +4,24 @@
 
 To view command-line parameters type `brooklyn_plot -h`:
 ```
-usage: brooklyn [options]
+usage: brooklyn_plot [options]
 
 Brooklyn (Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data)
 
-options:
+optional arguments:
   -h, --help  show this help message and exit
   --version   show program's version number and exit
 
 Options:
-  -h5,    --h5ad            input file in .h5ad format (accepts .h5ad)
+
+  -h5,   --h5ad               input file in .h5ad format (accepts .h5ad)
   -ba,   --biomart            the reference gene annotations (in .csv format)
   -od,   --outDir             the directory of the outputs (Default: brooklyn-date-hh-mm-ss)
   -of,   --outFile            the name of summarized brooklyn file as CSV file and a brooklyn plot in PDF (Default: brooklyn-date-hh-mm-ss)
-  -ql,   --query              the list of genes to be queired upon (one gene per line and in .csv format)
+  -ql,   --query              the list of genes to be queried upon (one gene per line and in .csv format)
   -sl,   --subject            the list of genes to be compared with (one gene per line and in .csv format)
   -cpu,  --threads            the number of processors to use for trimming, qc, and alignment (Default: 1)
-
+  
 ```
 
 ## CLI - Example usage 
