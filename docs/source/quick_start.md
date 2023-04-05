@@ -51,7 +51,7 @@ The analysis completed in 10.1727 second(s)
 ```
 
 ### Test 
-The test case illustrates the usage of brooklyn_plot with the cardica cells - dataset  
+The test case illustrates the usage of brooklyn_plot with the cardiac cells - dataset  
 
 - Download the required files from Source Forge, [DCM_data](https://sourceforge.net/projects/brooklyn/files/data/)
 ```
