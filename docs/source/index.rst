@@ -12,4 +12,5 @@ Welcome to brooklyn's documentation!
 
    installation.md
    quick_start.md
+   notebooks/example_TTN_CV_DCM.ipynb
    license

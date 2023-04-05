@@ -10,12 +10,12 @@ import sphinx_rtd_theme
 project = 'Brooklyn'
 copyright = '2023, Arun H Patil and Marc K Halushka'
 author = 'Arun H Patil and Marc K Halushka'
-release = '0.0.2'
+release = '0.0.3'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['recommonmark', 'sphinx_rtd_theme']
+extensions = ['recommonmark', 'sphinx_rtd_theme', 'nbsphinx']
 
 source_suffix = {
                 '.rst': 'restructuredtext',
