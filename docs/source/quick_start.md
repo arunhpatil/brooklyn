@@ -80,13 +80,13 @@ The path to ourput directory: results_ttn/brooklyn_2023-04-05_14-25-57
 
 The analysis completed in 7932.9977 second(s)
 ```
-- The output folder generated here is uploaded as zip file, you can download the same from [here](https://sourceforge.net/projects/brooklyn/files/data/results_ttn.zip/download)
+- The output folder generated here is uploaded as zip file, you can download the same from [here](https://sourceforge.net/projects/brooklyn/files/data/results_ttn.zip/download).
 
 ## How to build required input files, such as gene list, h5ad and biomart annotations? 
-The .h5ad file can be obtained from a singel cell or single nuclei RNA sequencing datasets for example, [cellxgene-collections](https://cellxgene.cziscience.com/collections). The users are recommended to select a single cell type corresponding to diagnosis/disease/normal state of interest. A detailed example of how we selected cell types from `DCM/ACM heart cell atlas: Cardiomyocytes` and other annotations such as biomart, gene lists are described here [Tutorial-notebook---TTN](https://brooklyn-plot.readthedocs.io/en/latest/notebooks/example_TTN_CV_DCM.html#Tutorial-notebook---TTN)
+The .h5ad file can be obtained from a singel cell or single nuclei RNA sequencing datasets for example, [cellxgene-collections](https://cellxgene.cziscience.com/collections). The users are recommended to select a single cell type corresponding to diagnosis/disease/normal state of interest. A detailed example of how we selected cell types from `DCM/ACM heart cell atlas: Cardiomyocytes` and other annotations such as biomart, gene lists are described here [Tutorial-notebook---TTN](https://brooklyn-plot.readthedocs.io/en/latest/notebooks/example_TTN_CV_DCM.html#Tutorial-notebook---TTN).
 
 ## Need assistance/have issues: 
 Please report any issues/concerns/suggestions [here](https://github.com/arunhpatil/brooklyn/issues). Click create new issue and in Title: “Please describe the error you think is obvious and will be general for the scientific community to recognize”, and Comment: “Give us the maximum information possible regarding the error that you can see on the standard output/terminal”.
 
 ## Resources 
-The h5AD AnnData was downloaded from [cellxgene](https://cellxgene.cziscience.com/collections/e75342a8-0f3b-4ec5-8ee1-245a23e0f7cb), [Reichart et al. (2022) Science](https://www.science.org/doi/10.1126/science.abo1984)
+The h5ad AnnData was downloaded from [cellxgene](https://cellxgene.cziscience.com/collections/e75342a8-0f3b-4ec5-8ee1-245a23e0f7cb), [Reichart et al. (2022) Science](https://www.science.org/doi/10.1126/science.abo1984)
