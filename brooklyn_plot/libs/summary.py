@@ -50,14 +50,14 @@ def summarize(workDir, fileBase):
     df2 = summarizedDF
     # Create chromosome order and sort accordingly
     chrOrder = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', 'X', 'Y', 'M', 'MT']
-    chrIndex = dict(zip(chrOrder, range(len(chrOrder))))
-    df2 = df2[df2['chromosome_name'].notna()]
-    df2['chromosome_name'] = df2['chromosome_name'].astype('string')
-    df2['ChrOrder'] = df2['chromosome_name'].map(chrIndex)
-    df2.to_csv("chrorder_temp.csv", index=False)
-    df2['ChrOrder'] = df2['ChrOrder'].astype('int')
-    df2.sort_values(['ChrOrder', 'end_position'], ascending = True, inplace = True)
-    df2.drop(columns='ChrOrder', inplace = True)
-    df2.to_csv(brookSumSorted, index=False)
+    chrIndex = dict(zip(chrOrder, range(len(chrOrder)))) # Creates a dictionary of chromosomes and a serial number as value
+    df2 = df2[df2['chromosome_name'].notna()] # Filter out any rows which don't represent any chromosomes (such as blank lines at the EOF)
+    df2['chromosome_name'] = df2['chromosome_name'].astype('string') # Making sure the column chromosome name is a string data type
+    df2 = df2.loc[df2['chromosome_name'].isin(chrOrder)] # Check for only chromosomes and avoid any patches
+    df2['ChrOrder'] = df2['chromosome_name'].map(chrIndex) # Creating a new column chrOrder which defines the order of each chromosomes.
+    df2['ChrOrder'] = df2['ChrOrder'].astype('int') # Making sure the column chrOrder is a integer 
+    df2.sort_values(['ChrOrder', 'end_position'], ascending = True, inplace = True) # Sort based on chromosome order and end position of each gene 
+    df2.drop(columns='ChrOrder', inplace = True) # Drop column chromosome order which is no longer required
+    df2.to_csv(brookSumSorted, index=False) # Write the sorted dataframe to a CSV file
     globalend_time = time.perf_counter()
     print(f'\nThe summary is completed in {round(globalend_time-globalstart, 4)} second(s)\n')
