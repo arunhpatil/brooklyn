@@ -51,44 +51,42 @@ The analysis completed in 10.1727 second(s)
 ```
 
 ### Test 
-The test case illustrates the usage of miRge3.0 with a sample dataset, mapping to human reference libraries. 
+The test case illustrates the usage of brooklyn_plot with the cardica cells - dataset  
 
-- Download the sample file from Source Forge, [SRR772403](https://sourceforge.net/projects/mirge3/files/test/SRR772403.fastq.gz/download)
+- Download the required files from Source Forge, [DCM_data](https://sourceforge.net/projects/brooklyn/files/data/)
 ```
 You can download to your working directory as shown below:
-wget -O SRR772403.fastq.gz "https://sourceforge.net/projects/mirge3/files/test/SRR772403.fastq.gz/download"
+wget -O subset_seidman_TTN.h5ad "https://sourceforge.net/projects/brooklyn/files/data/subset_seidman_TTN.h5ad/download"
+wget -O genelist.csv "https://sourceforge.net/projects/brooklyn/files/data/genelist.csv/download"
+wget -O againstlist.csv "https://sourceforge.net/projects/brooklyn/files/data/againstlist.csv/download"
+wget -O seidmanttn_var_biomart.csv "https://sourceforge.net/projects/brooklyn/files/data/seidmanttn_var_biomart.csv/download"
 ```
-- Run basic miRge3.0 command to annotate and report isomiRs
+- Run basic brooklyn_plot command: 
 ```
-miRge3.0 -s SRR772403.fastq.gz -lib /mnt/d/Halushka_lab/Arun/miRge3_Lib -a illumina -on human -db mirbase -o output_dir -gff -cpu 8
+brooklyn_plot -h5 subset_seidman_TTN.h5ad  -ba seidmanttn_var_biomart.csv -od results_ttn -ql genelist.csv -sl againstlist.csv -cpu 10
 
-bowtie version: 1.3.0
-cutadapt version: 3.1
-Samtools version: 1.11
-Collecting and validating input files...
+Entering parallel mode with 10 CPU's.
 
-miRge3.0 will process 1 out of 1 input file(s).
-
-Cutadapt finished for file SRR772403 in 3.4343 second(s)
-Collapsing finished for file SRR772403 in 0.0216 second(s)
-
-Matrix creation finished in 0.0263 second(s)
-
-Data pre-processing completed in 3.5111 second(s)
-
-Alignment in progress ...
-Alignment completed in 8.1488 second(s)
-
-Summarizing and tabulating results...
-Summary completed in 2.27 second(s)
+With chunk size of 35, 10 chunks are created
 
 
-The analysis completed in 15.2276 second(s)
+The brooklyn_arch execution is completed in -7923.1266 second(s)
+
+
+The summary is completed in 4.2357 second(s)
+
+
+The path to ourput directory: results_ttn/brooklyn_2023-04-05_14-25-57
+
+The analysis completed in 7932.9977 second(s)
 ```
-- Output folder, sample output can be accessed [here](https://sourceforge.net/projects/mirge3/files/test/output_dir/)
-```
-miRge creates a subfolder inside the folder "output_dir" and all the files will be stored there. The test output can be accessed at the following link:
-https://sourceforge.net/projects/mirge3/files/test/output_dir/miRge.2021-06-25_15-16-58/
-```
+- The output folder generated here is uploaded as zip file, you can download the same from [here](https://sourceforge.net/projects/brooklyn/files/data/results_ttn.zip/download)
+
+## How to build required input files, such as gene list, h5ad and biomart annotations? 
+The .h5ad file can be obtained from a singel cell or single nuclei RNA sequencing datasets for example, [cellxgene-collections](https://cellxgene.cziscience.com/collections). The users are recommended to select a single cell type corresponding to diagnosis/disease/normal state of interest. A detailed example of how we selected cell types from `DCM/ACM heart cell atlas: Cardiomyocytes` and other annotations such as biomart, gene lists are described here [Tutorial-notebook---TTN](https://brooklyn-plot.readthedocs.io/en/latest/notebooks/example_TTN_CV_DCM.html#Tutorial-notebook---TTN)
+
+## Need assistance/have issues: 
+Please report any issues/concerns/suggestions [here](https://github.com/arunhpatil/brooklyn/issues). Click create new issue and in Title: “Please describe the error you think is obvious and will be general for the scientific community to recognize”, and Comment: “Give us the maximum information possible regarding the error that you can see on the standard output/terminal”.
 
 ## Resources 
+The h5AD AnnData was downloaded from [cellxgene](https://cellxgene.cziscience.com/collections/e75342a8-0f3b-4ec5-8ee1-245a23e0f7cb), [Reichart et al. (2022) Science](https://www.science.org/doi/10.1126/science.abo1984)
