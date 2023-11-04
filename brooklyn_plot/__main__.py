@@ -58,14 +58,17 @@ def main():
         fileBase = "brooklyn"
     # Get number of threads 
     threads = args.threads
+    cm = args.corMethod
     return_status = False
     # Initiating co-expression pattern finding
-    return_status = brooklyn_arch(h5file, workDir, annotations, geneList, againstList, threads)
+    return_status = brooklyn_arch(h5file, workDir, annotations, geneList, againstList, threads, cm, fileBase)
     if not return_status:
         print("Error: While finding co-expression patterns, the execution was terminated for reasons unknown!")
         exit()
-    # Summarizing the overall gene co-expression and generating summary file for brooklyn_plot
-    summarize(workDir, fileBase)
+
+    if not cm == 'bc':
+        # Summarizing the overall gene co-expression and generating summary file for brooklyn_plot
+        summarize(workDir, fileBase)
     RscriptDirTmp = Path(__file__).resolve().parents[0]
     RscriptDir = Path(RscriptDirTmp)/('rScripts')/('brooklynPlot.R')
     brooklynSummarySorted = Path(workDir)/str(str(fileBase) + "_sorted_summary.csv")
