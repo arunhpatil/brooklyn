@@ -20,6 +20,7 @@ Options:
   -of,   --outFile            the name of summarized brooklyn file as CSV file and a brooklyn plot in PDF (Default: brooklyn)
   -ql,   --query              the list of genes to be queried upon (one gene per line and in .csv format)
   -sl,   --subject            the list of genes to be compared with (one gene per line and in .csv format)
+  -cm,   --corMethod          the statistical approach for correlation measures (options: [pr, kt, bc] for pearsonr, kendalltau and bayesian correlation respectively. Default: pr)
   -cpu,  --threads            the number of processors to use for trimming, qc, and alignment (Default: 1)
   
 ```
