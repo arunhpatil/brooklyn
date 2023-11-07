@@ -5,10 +5,10 @@ with open("README.rst", "r") as fh:
 
 setup(
         name='brooklyn_plot',
-        version='0.0.2',
-        author='Arun Patil and Marc Halushka',
-        author_email='mhalush1@jhmi.edu',
-        url='https://github.com/mhalushka/brooklyn/',
+        version='0.0.4',
+        author='Arun Patil, Matthew McCall and Marc Halushka',
+        author_email='halushm@ccf.org',
+        url='https://github.com/arunhpatil/brooklyn/',
         description='Gene co-expression and transcriptional bursting pattern recognition tool in single cell/nucleus RNA-sequencing data',
         long_description=long_description,
         keywords=['brooklyn', 'single cell', 'single nucleus', 'single cell-RNA', 'single nucleus-RNA', 'RNA analysis', 'cellxgene', 'RNA-seq', 'bioinformatics tools', 'co-expression', 'transcriptional bursting', 'sc-RNAseq', 'sn-RNAseq'],  # arbitrary keywords
@@ -16,7 +16,7 @@ setup(
         package_dir={'brooklyn_plot': 'brooklyn_plot'},
         packages=find_packages(),
         package_data = {'':['rScripts/*.R', 'libs/*.py']},
-        install_requires=['scanpy','pandas','numpy','scipy'],
+        install_requires=['scanpy','pandas','numpy','scipy','rpy2'],
         entry_points={'console_scripts': ['brooklyn_plot = brooklyn_plot.__main__:main']},
         classifiers=[
             "Development Status :: 1 - Planning",
