@@ -30,5 +30,5 @@ Links
 Citation
 ========
 
-Arun H Patil, Matthew N. McCall and Marc K Halushka. **Brooklyn plots to identify co-expression dysregulation in single cell sequencing**. `NAR Genomics and Bioinformatics  < >`_. 2023.
+Arun H Patil, Matthew N. McCall and Marc K Halushka. **Brooklyn plots to identify co-expression dysregulation in single cell sequencing**. `NAR Genomics and Bioinformatics`. 2023.
 
