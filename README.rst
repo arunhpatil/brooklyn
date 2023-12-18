@@ -12,6 +12,9 @@
 .. image:: https://anaconda.org/bioconda/brooklyn_plot/badges/downloads.svg 
     :target: https://anaconda.org/bioconda/brooklyn_plot/files
 
+.. image:: https://zenodo.org/badge/617565032.svg
+  :target: https://zenodo.org/doi/10.5281/zenodo.10371902
+
 ========
 Brooklyn
 ========
