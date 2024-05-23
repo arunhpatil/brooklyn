@@ -1,18 +1,21 @@
-.. image:: https://img.shields.io/pypi/v/brooklyn_plot.svg?branch=main
+|PyPi| |Bioconda| |Release| |Downloads| |Zenodo|
+
+
+.. |PyPi| image:: https://img.shields.io/pypi/v/brooklyn_plot.svg?branch=main
     :target: https://pypi.org/project/brooklyn-plot/
     :alt:
     
-.. image:: https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat
+.. |Bioconda| image:: https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg?style=flat
     :target: http://bioconda.github.io/recipes/brooklyn_plot/README.html
     :alt: install with bioconda
 
-.. image:: https://anaconda.org/bioconda/brooklyn_plot/badges/latest_release_date.svg  
+.. |Release| image:: https://anaconda.org/bioconda/brooklyn_plot/badges/latest_release_date.svg  
     :target: https://anaconda.org/bioconda/brooklyn_plot
     
-.. image:: https://anaconda.org/bioconda/brooklyn_plot/badges/downloads.svg 
+.. |Downloads| image:: https://anaconda.org/bioconda/brooklyn_plot/badges/downloads.svg 
     :target: https://anaconda.org/bioconda/brooklyn_plot/files
 
-.. image:: https://zenodo.org/badge/617565032.svg
+.. |Zenodo| image:: https://zenodo.org/badge/617565032.svg
   :target: https://zenodo.org/doi/10.5281/zenodo.10371902
 
 ========
