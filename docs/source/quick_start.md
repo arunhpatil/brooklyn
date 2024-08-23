@@ -64,7 +64,7 @@ wget -O seidmanttn_var_biomart.csv "https://sourceforge.net/projects/brooklyn/fi
 ```
 - Run basic brooklyn_plot command: 
 ```
-brooklyn_plot -h5 subset_seidman_TTN.h5ad  -ba seidmanttn_var_biomart.csv -od results_ttn -ql genelist.csv -sl againstlist.csv -cpu 10
+brooklyn_plot -h5 YOUR_SAMPLE.h5ad  -ba YOUR_SAMPLE_biomart.csv -od results_folder -ql genelist.csv -sl againstlist.csv -cpu 10
 
 Entering parallel mode with 10 CPU's.
 
