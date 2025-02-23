@@ -54,6 +54,8 @@ The analysis completed in 10.1727 second(s)
 ### Test 
 The test case illustrates the usage of brooklyn_plot with the cardiac cells - dataset  
 
+- NOTE: All test files are now moved from Source Forge to Google Drive. The folder can be accessed [here](https://drive.google.com/drive/folders/1BUTf9XpUwQ91u7vmaRu5dSIeS15-dOLT?usp=sharing). If you have issues with the access, please reachout to us and the files will be made available. 
+<!---
 - Download the required files from Source Forge, [DCM_data](https://sourceforge.net/projects/brooklyn/files/data/)
 ```
 You can download to your working directory as shown below:
@@ -62,6 +64,7 @@ wget -O genelist.csv "https://sourceforge.net/projects/brooklyn/files/data/genel
 wget -O againstlist.csv "https://sourceforge.net/projects/brooklyn/files/data/againstlist.csv/download"
 wget -O seidmanttn_var_biomart.csv "https://sourceforge.net/projects/brooklyn/files/data/seidmanttn_var_biomart.csv/download"
 ```
+-->
 - Run basic brooklyn_plot command: 
 ```
 brooklyn_plot -h5 subset_seidman_TTN.h5ad  -ba seidmanttn_var_biomart.csv -od results_ttn -ql genelist.csv -sl againstlist.csv -cpu 10
@@ -81,8 +84,9 @@ The path to ourput directory: results_ttn/brooklyn_2023-04-05_14-25-57
 
 The analysis completed in 7932.9977 second(s)
 ```
+<!---
 - The output folder generated here is uploaded as zip file, you can download the same from [here](https://sourceforge.net/projects/brooklyn/files/data/results_ttn.zip/download).
-
+--->
 ## How to build required input files, such as gene list, h5ad and biomart annotations? 
 The .h5ad file can be obtained from a singel cell or single nuclei RNA sequencing datasets for example, [cellxgene-collections](https://cellxgene.cziscience.com/collections). The users are recommended to select a single cell type corresponding to diagnosis/disease/normal state of interest. A detailed example of how we selected cell types from `DCM/ACM heart cell atlas: Cardiomyocytes` and other annotations such as biomart, gene lists are described here [Tutorial-notebook---TTN](https://brooklyn-plot.readthedocs.io/en/latest/notebooks/example_TTN_CV_DCM.html#Tutorial-notebook---TTN).
 
